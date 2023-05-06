@@ -23,13 +23,20 @@ function App() {
     setBonsais([...bonsais, newBonsai])
   }
 
+  function handleBonsaiDelete(id) {
+    const bonsaisToDisplay = bonsais.filter((bonsai) => (
+      (id !== bonsai.id) 
+    ))
+    setBonsais(bonsaisToDisplay)
+  }
+
   return (
     <div>
       <NavBar />
       <Routes>
         <Route path="/home" element={<Home/>}/>
         <Route exact path="/bonsaicollection/" element={<BonsaiCollection bonsais={bonsais} />}>
-          <Route path={"/bonsaicollection/:id"} element={<BonsaiDetails bonsais={bonsais}/>}/>
+          <Route path={"/bonsaicollection/:id"} element={<BonsaiDetails bonsais={bonsais} handleBonsaiDelete={handleBonsaiDelete}/>}/>
         </Route>
         <Route path="/about" element={<About />} >
           <Route path="/about/contactme" element={<ContactMe/>}/>
