@@ -1,0 +1,76 @@
+{
+  "bonsais": [
+    {
+      "id": 1,
+      "name": "Japanese Maple Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2017/04/07/14/46/bonsai-2211102__480.jpg",
+      "family": "Sapindaceae",
+      "genus": "Acer palmatum",
+      "size": "60-80 inches"
+    },
+    {
+      "id": 2,
+      "name": "Japanese Five Needle White Pine Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2017/08/06/07/28/plant-2589866_1280.jpg",
+      "family": "Pinaceae",
+      "genus": "Pinus parviflora",
+      "size": "10-12 inches"
+    },
+    {
+      "id": 3,
+      "name": "Japanese Yew Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2018/02/02/15/49/bonsai-3125720_1280.jpg",
+      "family": "Taxaceae",
+      "genus": "Taxus cuspidata",
+      "size": "12-36 inches"
+    },
+    {
+      "id": 4,
+      "name": "Ficus Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2021/12/25/14/10/plant-6893201_1280.jpg",
+      "family": "Moraceae",
+      "genus": "Ficus ginseng",
+      "size": "11-24 inches"
+    },
+    {
+      "id": 5,
+      "name": "Azalea Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2018/02/02/15/52/bonsai-3125722_1280.jpg",
+      "family": "Ericaceae",
+      "genus": "Rhododendron kaempferi",
+      "size": "36-48 inches"
+    },
+    {
+      "id": 6,
+      "name": "Chinese Elm Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2018/02/02/15/44/bonsai-3125715_1280.jpg",
+      "family": "Ulmaceae",
+      "genus": "Ulmus parvifolia",
+      "size": "18-24 inches"
+    },
+    {
+      "id": 7,
+      "name": "Cherry Tree Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2022/08/03/09/45/bonsai-7362260_1280.jpg",
+      "family": "Rosaceae",
+      "genus": "Prunus x yedoensis",
+      "size": "10-15 inches"
+    },
+    {
+      "id": 8,
+      "name": "Juniper Bonsai",
+      "image": "https://cdn.pixabay.com/photo/2021/11/13/01/49/bonsai-6790362_1280.jpg",
+      "family": "Cupressaceae",
+      "genus": "Juniperus chinensis",
+      "size": "36-72 inches"
+    },
+    {
+      "name": "asdf",
+      "image": "asdf",
+      "family": "asdf",
+      "genus": "asdf",
+      "size": "asdf",
+      "id": 9
+    }
+  ]
+}
