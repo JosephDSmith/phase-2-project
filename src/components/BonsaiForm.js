@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 
 function BonsaiForm({ addNewBonsai }){
 
-    const [name, setName] = useState([])
-    const [image, setImage] = useState([])
-    const [family, setFamily] = useState([])
-    const [genus, setGenus] = useState([])
-    const [size, setSize] = useState([])
+    const [name, setName] = useState("")
+    const [image, setImage] = useState("")
+    const [family, setFamily] = useState("")
+    const [genus, setGenus] = useState("")
+    const [size, setSize] = useState("")
 
     const newBonsai ={
         name: name,
@@ -26,7 +26,15 @@ function BonsaiForm({ addNewBonsai }){
             body: JSON.stringify(newBonsai)
           })
             .then((r) => r.json())
-            .then((newItem)=> addNewBonsai(newItem))
+            .then((newItem)=> {
+                addNewBonsai(newItem)
+                setName("")
+                setImage("")
+                setFamily("")
+                setGenus("")
+                setSize("")
+            })
+
     }
 
     return (
@@ -36,30 +44,35 @@ function BonsaiForm({ addNewBonsai }){
                 <input           
                 type="text"
                 name="name"
+                value={name}
                 placeholder="Bonsai name"
                 onChange={(e) => setName(e.target.value)}
                 />
                 <input           
                 type="text"
                 name="image"
+                value={image}
                 placeholder="Image"
                 onChange={(e) => setImage(e.target.value)}
                 />
                 <input           
                 type="text"
                 name="family"
+                value={family}
                 placeholder="Family"
                 onChange={(e) => setFamily(e.target.value)}
                 />
                 <input           
                 type="text"
                 name="genus"
+                value={genus}
                 placeholder="Genus + Species"
                 onChange={(e) => setGenus(e.target.value)}
                 />
                 <input           
                 type="text"
                 name="size"
+                value={size}
                 placeholder="Mature size"
                 onChange={(e) => setSize(e.target.value)}
                 />

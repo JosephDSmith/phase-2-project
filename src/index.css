@@ -2,3 +2,8 @@
     max-width: 700px;
     max-height: 700px;
 }
+
+.editMenu img {
+    max-width :300px;
+    max-height: 300px;
+}
