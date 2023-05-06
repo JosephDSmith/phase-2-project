@@ -6,7 +6,7 @@ function BonsaiDetails({
   handleBonsaiDelete,
   isEditing,
   setIsEditing,
-  handleUpdateBonsai
+  handleUpdateBonsai,
 }) {
   const { id } = useParams();
 
@@ -16,7 +16,7 @@ function BonsaiDetails({
   const [editImage, setEditImage] = useState("");
   const [editFamily, setEditFamily] = useState("");
   const [editGenus, setEditGenus] = useState("");
-  const [editSize, setEditSize] = useState("")
+  const [editSize, setEditSize] = useState("");
 
   function handleClick() {
     fetch(`http://localhost:3000/bonsais/${bonsai.id}`, {
@@ -31,8 +31,8 @@ function BonsaiDetails({
     image: editImage,
     family: editFamily,
     genus: editGenus,
-    size: editSize
-  }
+    size: editSize,
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -44,8 +44,8 @@ function BonsaiDetails({
       body: JSON.stringify(editedBonsai),
     })
       .then((r) => r.json())
-      .then((updatedBonsai) => handleUpdateBonsai(updatedBonsai))
-      setIsEditing((prevState) => !prevState)
+      .then((updatedBonsai) => handleUpdateBonsai(updatedBonsai));
+    setIsEditing((prevState) => !prevState);
   }
 
   return (
@@ -57,7 +57,7 @@ function BonsaiDetails({
           <img src={bonsai.image} />
           <form onSubmit={handleSubmit}>
             <input
-              required 
+              required
               type="text"
               name="name"
               placeholder="Bonsai name"
@@ -88,11 +88,14 @@ function BonsaiDetails({
               placeholder="Mature size"
               onChange={(e) => setEditSize(e.target.value)}
             />
-            <button type="submit" >Submit these edits</button>
+            <button type="submit">Submit these edits</button>
           </form>
         </div>
       ) : (
         <div className="bonsaiCard">
+          <button>
+            <Link to="/bonsaicollection/">Collapse Details</Link>
+          </button>
           <h3>{bonsai.name}</h3>
           <p>Family : {bonsai.family}</p>
           <p>Genus-Species : {bonsai.genus}</p>

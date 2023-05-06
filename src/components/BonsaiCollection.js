@@ -3,7 +3,8 @@ import { Link, Outlet, Route, Routes } from "react-router-dom";
 import BonsaiDetails from "./BonsaiDetails";
 
 function BonsaiCollection({ bonsais, setIsEditing }) {
-  
+
+    const [expandDetails, setExpandDetails] = useState(false)
 
   return (
     <div>
@@ -14,15 +15,14 @@ function BonsaiCollection({ bonsais, setIsEditing }) {
             <Link
               to={`/bonsaicollection/${bonsai.id}`}
               onClick={() => setIsEditing(false)}
+
             >
               {bonsai.name}
             </Link>
           </li>
         ))}
       </ul>
-      <Outlet/>
-        
-   
+      <Outlet />
     </div>
   );
 }
