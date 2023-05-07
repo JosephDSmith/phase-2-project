@@ -53,6 +53,7 @@ function BonsaiDetails({
       {isEditing ? (
         <div className="editMenu">
           <h3>Edit this bonsai below...</h3>
+          <button onClick={() => setIsEditing((prevState) => !prevState)}>Cancel these Edits</button>
           <p>{bonsai.name}</p>
           <img src={bonsai.image} />
           <form onSubmit={handleSubmit}>
