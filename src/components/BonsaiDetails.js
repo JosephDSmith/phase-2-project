@@ -12,11 +12,11 @@ function BonsaiDetails({
 
   const bonsai = bonsais.find((b) => b.id == id);
 
-  const [editName, setEditName] = useState("");
-  const [editImage, setEditImage] = useState("");
-  const [editFamily, setEditFamily] = useState("");
-  const [editGenus, setEditGenus] = useState("");
-  const [editSize, setEditSize] = useState("");
+  const [editName, setEditName] = useState(bonsai.name);
+  const [editImage, setEditImage] = useState(bonsai.image);
+  const [editFamily, setEditFamily] = useState(bonsai.family);
+  const [editGenus, setEditGenus] = useState(bonsai.genus);
+  const [editSize, setEditSize] = useState(bonsai.size);
 
   function handleClick() {
     fetch(`http://localhost:3000/bonsais/${bonsai.id}`, {
@@ -61,32 +61,32 @@ function BonsaiDetails({
               required
               type="text"
               name="name"
-              placeholder="Bonsai name"
+              value={editName}
               onChange={(e) => setEditName(e.target.value)}
             />
             <input
               required
               type="text"
               name="image"
-              placeholder="Image"
+              value={editImage}
               onChange={(e) => setEditImage(e.target.value)}
             />
             <input
               type="text"
               name="family"
-              placeholder="Family"
+              value={editFamily}
               onChange={(e) => setEditFamily(e.target.value)}
             />
             <input
               type="text"
               name="genus"
-              placeholder="Genus + Species"
+              value={editGenus}
               onChange={(e) => setEditGenus(e.target.value)}
             />
             <input
               type="text"
               name="size"
-              placeholder="Mature size"
+              value={editSize}
               onChange={(e) => setEditSize(e.target.value)}
             />
             <button type="submit">Submit these edits</button>
