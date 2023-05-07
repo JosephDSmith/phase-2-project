@@ -32,8 +32,10 @@ function About() {
           <p>You can view my bonsai collection, or add your own bonsai!</p>
         </div>
       </div>
-      <Link to="/about/contactme">Click Here to Contact Me!</Link>
-      <Link to="/about/FAQs">FAQs</Link>
+      <div className="about-links">
+        <Link to="/about/contactme">Click Here to Contact Me!</Link>
+        <Link to="/about/FAQs">FAQs</Link>
+      </div>
       <Outlet />
     </div>
   );
