@@ -109,3 +109,17 @@ a:hover {
     color: #40513B
 }
 
+/* Contact Me */
+
+.contact-me {
+    padding: 1rem;
+}
+.contact-me-links a{
+    font-size: 3rem;
+    margin: 1rem;
+    color:#40513B
+}
+.contact-me h3{
+    margin: 1rem
+}
+
