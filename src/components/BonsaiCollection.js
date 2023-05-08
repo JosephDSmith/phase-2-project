@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import { Link, Outlet, Route, Routes } from "react-router-dom";
-import BonsaiDetails from "./BonsaiDetails";
 
 function BonsaiCollection({ bonsais, setIsEditing }) {
-
-    const [expandDetails, setExpandDetails] = useState(false)
+  const [expandDetails, setExpandDetails] = useState(false);
 
   return (
-    <div>
-      <h2>Click on a bonsai for more details</h2>
-      <ul>
+    <div className="bonsai-container">
+      <h2>My Bonsai Collection</h2>
+      <ul className="bonsai-list">
         {bonsais.map((bonsai) => (
           <li key={bonsai.id}>
             <Link
               to={`/bonsaicollection/${bonsai.id}`}
               onClick={() => setIsEditing(false)}
-
             >
-              {bonsai.name}
+              <div className="bonsai-icon">
+                <img src={bonsai.image} alt={bonsai.name} />
+              </div>
             </Link>
+            <h5>{bonsai.name}</h5>
           </li>
         ))}
       </ul>

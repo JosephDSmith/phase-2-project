@@ -71,7 +71,7 @@ function App() {
         </Route>
         <Route path="/about" element={<About />}>
           <Route path="/about/contactme" element={<ContactMe />} />
-          <Route path="/about/FAQs" element={<FAQs />} />
+          <Route path="/about/FAQs" element={<FAQs/>} />
         </Route>
         <Route
           path="/addbonsai"

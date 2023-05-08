@@ -2,6 +2,8 @@ import { Link, Outlet } from "react-router-dom";
 import josephImg from "../images/joseph-image.png";
 
 function About() {
+
+
   return (
     <div className="about">
       <div className="bonsai-about">
@@ -28,15 +30,15 @@ function About() {
         </div>
         <div className="about-me-text">
           <h2>About me</h2>
-          <p>I'm an aspiring bonsai cultivator with a passion</p>
-          <p>You can view my bonsai collection, or add your own bonsai!</p>
+          <p>I'm an aspiring bonsai cultivator with a passion for all things green!</p>
+          <p>You can view my bonsai collection - and add your own bonsai!</p>
         </div>
       </div>
       <div className="about-links">
         <Link to="/about/contactme">Click Here to Contact Me!</Link>
         <Link to="/about/FAQs">FAQs</Link>
       </div>
-      <Outlet />
+      <Outlet/>
     </div>
   );
 }

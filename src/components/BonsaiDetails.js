@@ -49,12 +49,17 @@ function BonsaiDetails({
   }
 
   return (
-    <div>
+    <div className="details">
       {isEditing ? (
         <div className="editMenu">
-          <h3>Edit this bonsai below...</h3>
-          <button onClick={() => setIsEditing((prevState) => !prevState)}>Cancel these Edits</button>
-          <p>{bonsai.name}</p>
+          <button
+            className="collapse"
+            onClick={() => setIsEditing((prevState) => !prevState)}
+          >
+            <h5>
+              Cancel Edit <i className="fa-solid fa-circle-xmark"></i>
+            </h5>
+          </button>
           <img src={bonsai.image} />
           <form onSubmit={handleSubmit}>
             <input
@@ -89,25 +94,36 @@ function BonsaiDetails({
               value={editSize}
               onChange={(e) => setEditSize(e.target.value)}
             />
-            <button type="submit">Submit these edits</button>
+            <button className="edit-submit" type="submit">Save</button>
           </form>
         </div>
       ) : (
         <div className="bonsaiCard">
-          <button>
-            <Link to="/bonsaicollection/">Collapse Details</Link>
-          </button>
-          <h3>{bonsai.name}</h3>
-          <p>Family : {bonsai.family}</p>
-          <p>Genus-Species : {bonsai.genus}</p>
-          <p>Mature Size : {bonsai.size}</p>
-          <button onClick={() => setIsEditing((prevState) => !prevState)}>
-            Edit this Bonsai
-          </button>
-          <button onClick={handleClick}>
-            <Link to="/bonsaicollection/">Delete this Bonsai</Link>
-          </button>
-          <img src={bonsai.image} />
+          <Link to="/bonsaicollection/">
+            <h5>
+              Collapse Details <i className="fa-solid fa-circle-xmark"></i>
+            </h5>
+          </Link>
+          <div className="details-image">
+            <img src={bonsai.image} />
+            <div className="button-wrapper">
+              <button
+                className="edit-button"
+                onClick={() => setIsEditing((prevState) => !prevState)}
+              >
+                Edit
+              </button>
+              <button className="delete-button" onClick={handleClick}>
+                <Link to="/bonsaicollection/">Delete</Link>
+              </button>
+            </div>
+          </div>
+          <div className="about-info">
+            <h3>{bonsai.name}</h3>
+            <p>Family : {bonsai.family}</p>
+            <p>Genus-Species : {bonsai.genus}</p>
+            <p>Mature Size : {bonsai.size}</p>
+          </div>
         </div>
       )}
     </div>

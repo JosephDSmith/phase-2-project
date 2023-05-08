@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BonsaiForm({ addNewBonsai }) {
   const [name, setName] = useState("");
@@ -14,6 +15,8 @@ function BonsaiForm({ addNewBonsai }) {
     genus: genus,
     size: size,
   };
+
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,14 +35,17 @@ function BonsaiForm({ addNewBonsai }) {
         setFamily("");
         setGenus("");
         setSize("");
+        navigate("/bonsaicollection")
       });
+      
   }
 
   return (
-    <div>
+    <div className="bonsai-form">
       <h2>Add a new Bonsai to my collection!</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
+          required
           type="text"
           name="name"
           value={name}
@@ -47,6 +53,7 @@ function BonsaiForm({ addNewBonsai }) {
           onChange={(e) => setName(e.target.value)}
         />
         <input
+          required
           type="text"
           name="image"
           value={image}

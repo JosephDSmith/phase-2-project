@@ -26,10 +26,12 @@ a:hover {
     justify-content: space-between;
     padding: 1rem;
 }
+
 .navWrapper a {
     color: #EDF1D6
 }
-.logo a{
+
+.logo a {
     color: #40513B
 }
 
@@ -40,22 +42,18 @@ a:hover {
     border-radius: 15px;
 }
 
-.navigation a{
+.navigation a {
     margin: 0px 10px;
 }
 
-.navigation a:last-child{
+.navigation a:last-child {
     margin-right: 0;
 
 }
+
 .bonsaiCard img {
     max-width: 700px;
     max-height: 700px;
-}
-
-.editMenu img {
-    max-width :300px;
-    max-height: 300px;
 }
 
 /* About */
@@ -64,47 +62,62 @@ a:hover {
     padding: 1rem;
     text-align: center;
 }
-.about p{
+
+.about p {
     color: rgb(113, 107, 107)
 }
+
 .about h2 {
     margin-bottom: 1rem;
 }
+
 .about-bonsai-image img {
     width: 100%;
     height: auto;
 }
+
 .about-me-image img {
     width: 75%;
     height: auto;
 }
-.bonsai-about, .me-about {
+
+.bonsai-about,
+.me-about {
     display: flex;
     margin: 3rem 0
 }
-.about-bonsai-text, .about-me-text{
+
+.about-bonsai-text,
+.about-me-text {
     width: 60%;
 }
-.about-bonsai-image, .about-me-image {
+
+.about-bonsai-image,
+.about-me-image {
     width: 40%;
 }
-.me-about{
+
+.me-about {
     display: flex;
-   
+
 }
-.about-me-text, .about-bonsai-text {
+
+.about-me-text,
+.about-bonsai-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .about-links {
     display: flex;
     align-items: center;
     justify-content: center;
- 
+
 }
-.about-links a{
+
+.about-links a {
     padding: 1rem;
     color: #40513B
 }
@@ -114,12 +127,250 @@ a:hover {
 .contact-me {
     padding: 1rem;
 }
-.contact-me-links a{
+
+.contact-me-links a {
     font-size: 3rem;
     margin: 1rem;
-    color:#40513B
+    color: #40513B
 }
-.contact-me h3{
+
+.contact-me h3 {
     margin: 1rem
 }
 
+/* FAQ */
+
+.FAQ {
+    margin-top: 2rem;
+}
+
+.wrapper {
+    margin: 1rem;
+}
+
+/* Bonsai Form */
+
+.bonsai-form, .editMenu form {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bonsai-form input, .editMenu input {
+    width: 100%;
+    margin: .5rem 0;
+    padding: .5rem;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    outline: none;
+}
+
+.bonsai-form form {
+    width: 30%
+}
+
+.bonsai-form h2 {
+    margin: 2rem;
+}
+
+.bonsai-form button, .editMenu .edit-submit {
+    margin-top: 1.5rem;
+    background: #609966;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    cursor:pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.bonsai-form button:hover, .editMenu .edit-submit:hover {
+    background: #40513B;
+    text-decoration: none;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+/* Bonsai Collection */
+
+.bonsai-container {
+    padding: 1rem;
+}
+
+.bonsai-container h2 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.bonsai-icon {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.bonsai-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    margin: 0 .5rem
+}
+
+li h5 {
+    margin-top: 1rem;
+    font-weight: lighter;
+}
+
+ul.bonsai-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Bonsai Details */
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bonsaiCard h5 {
+    color: #40513B;
+    margin: 1rem 0;
+}
+
+.details-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+}
+
+.details-image img {
+    max-width: 700px;
+    max-height: auto;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.editMenu img {
+    max-width: 700px;
+    max-height: auto;
+    border-radius: 15px;
+}
+.button-wrapper {
+    margin-bottom: 1.rem;
+}
+.button-wrapper button {
+    margin: 1rem;
+    width: 100px;
+}
+.button-wrapper .edit-button {
+    margin-top: 1.5rem;
+    background: orange;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.button-wrapper .delete-button {
+    margin-top: 1.5rem;
+    background: red;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.button-wrapper .delete-button a {
+    text-decoration: none;
+    color: white;
+}
+.button-wrapper .edit-button:hover {
+    background: rgb(159, 103, 0);
+    text-decoration: none;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.button-wrapper .delete-button:hover {
+    background: rgb(140, 0, 0);
+    text-decoration: none;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.about-info h3, .about-info p {
+    margin:1rem 0;
+}
+/* Edit Menu*/
+
+.editMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.editMenu:first-child {
+    align-items: start;
+  
+}
+.editMenu h5{
+    padding: 1rem 0;
+}
+.editMenu .collapse {
+    background-color: white;
+    border: none;
+    color: #40513B;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor:pointer;
+    font-weight: light;
+}
+.editMenu .collapse:hover{
+    text-decoration: underline;
+}
+.editMenu form {
+    width: 100%;
+}

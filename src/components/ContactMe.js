@@ -1,6 +1,6 @@
 function ContactMe() {
   return (
-    <div className="contact-me">
+    <div className="contact-me" id="contact-me">
       <h3>You can find me on</h3>
       <div className="contact-me-links">
         <a href="https://github.com/JosephDSmith" target="_blank">
