@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function BonsaiDetails({
@@ -8,15 +8,33 @@ function BonsaiDetails({
   setIsEditing,
   handleUpdateBonsai,
 }) {
+
   const { id } = useParams();
 
   const bonsai = bonsais.find((b) => b.id == id);
 
+  console.log(id)
+  console.log(bonsai)
+  
   const [editName, setEditName] = useState(bonsai.name);
   const [editImage, setEditImage] = useState(bonsai.image);
   const [editFamily, setEditFamily] = useState(bonsai.family);
   const [editGenus, setEditGenus] = useState(bonsai.genus);
   const [editSize, setEditSize] = useState(bonsai.size);
+  
+
+
+  console.log(id)
+useEffect(()=>{
+  setEditName(bonsai.name)
+  setEditImage(bonsai.image)
+  setEditFamily(bonsai.family)
+  setEditGenus(bonsai.genus)
+  setEditSize(bonsai.size)
+},[id])
+ 
+
+
 
   function handleClick() {
     fetch(`http://localhost:3000/bonsais/${bonsai.id}`, {
@@ -47,6 +65,7 @@ function BonsaiDetails({
       .then((updatedBonsai) => handleUpdateBonsai(updatedBonsai));
     setIsEditing((prevState) => !prevState);
   }
+
 
   return (
     <div className="details">
