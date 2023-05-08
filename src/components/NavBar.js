@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <div className="navWrapper">
         <div className="logo">
-            <Link to="/">Bonsai Collection</Link>
+            <Link to="/">My Bonsai Garden</Link>
         </div>
       <div className="navigation">
         <NavLink className={(navClass) => navClass.isActive ? 'active_link':""}to="/">Home</NavLink>
