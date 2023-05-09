@@ -22,17 +22,19 @@ App features :
 
 - Navigate through the menu:
 
-![Gif 1](https://github.com/JosephDSmith/phase-2-project/assets/122189576/a73b78af-5a6f-475e-93b7-7bcadeeacc3d)
+![Gif 1](https://github.com/JosephDSmith/phase-2-project/assets/122189576/5b78270d-be72-4325-a28c-3dbc9724d58b)
 
 - Access and expand details for the bonsai collection:  
 
-![Gif 2](https://github.com/JosephDSmith/phase-2-project/assets/122189576/16fa5a54-d5d0-46a4-936f-0d894ee1dc2f)
+![Gif 2](https://github.com/JosephDSmith/phase-2-project/assets/122189576/3cc36478-0d1a-425c-b232-bb1b99c2884d)
 
 - Edit an existing bonsai, or delete an existing bonsai from the collection.
 
+![Gif 3](https://github.com/JosephDSmith/phase-2-project/assets/122189576/d8169d44-f69f-4643-8b26-b16f1f71e717)
+
 - Add a bonsai to the collection:
 
-![Gif 4](https://github.com/JosephDSmith/phase-2-project/assets/122189576/d6da53a7-d385-42ab-99fb-552bc5a30f84)
+![Gif 4](https://github.com/JosephDSmith/phase-2-project/assets/122189576/854e8d3e-bbea-45f0-8bd6-5bfcefb411e3)
 
 ## Contributing
 
