@@ -38,7 +38,7 @@ function BonsaiDetails({
   }, [id, bonsais, isEditing]);
 
   function handleClick() {
-    fetch(`http://localhost:3000/bonsais/${bonsai.id}`, {
+    fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
       method: "DELETE",
     });
 
@@ -55,7 +55,7 @@ function BonsaiDetails({
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`http://localhost:3000/bonsais/${bonsai.id}`, {
+    fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

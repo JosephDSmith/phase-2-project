@@ -20,7 +20,7 @@ function BonsaiForm({ addNewBonsai }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/bonsais", {
+    fetch("https://phase-2-project-db-qexg.onrender.com/bonsais", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -14,6 +14,7 @@ function App() {
   const [bonsais, setBonsais] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
 
+
   useEffect(() => {
     fetch("http://localhost:3000/bonsais")
       .then((r) => r.json())
@@ -21,7 +22,9 @@ function App() {
   }, []);
 
   function addNewBonsai(newBonsai) {
+  
     setBonsais([...bonsais, newBonsai]);
+    
   }
 
   function handleBonsaiDelete(id) {

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function BonsaiCollection({ bonsais, setIsEditing, isEditing }) {
-
-  
-  
-
+console.log(bonsais)
   return (
     <div className="bonsai-container">
       <h2>My Bonsai Collection</h2>
