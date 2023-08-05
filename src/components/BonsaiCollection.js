@@ -10,7 +10,7 @@ console.log(bonsais)
         {bonsais.map((bonsai) => (
           <li key={bonsai.id}>
             <Link
-              to={`/bonsaicollection/${bonsai.id}`}
+              to={`https://my-bonsai-garden.netlify.app//bonsaicollection/${bonsai.id}`}
               onClick={() => setIsEditing(false)}
               
             >
