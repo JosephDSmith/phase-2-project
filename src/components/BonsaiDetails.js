@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function BonsaiDetails({
@@ -9,21 +9,35 @@ function BonsaiDetails({
   handleUpdateBonsai,
 }) {
   const { id } = useParams();
-  const [bonsai, setBonsai] = useState(null); // Use null instead of an empty object
+  const [bonsai, setBonsai] = useState({
+    name: "",
+    image: "",
+    family: "",
+    genus: "",
+    size: "",
+  });
 
-  const editNameRef = useRef("");
-  const editImageRef = useRef("");
-  const editFamilyRef = useRef("");
-  const editGenusRef = useRef("");
-  const editSizeRef = useRef("");
+  const [editName, setEditName] = useState("");
+  const [editImage, setEditImage] = useState("");
+  const [editFamily, setEditFamily] = useState("");
+  const [editGenus, setEditGenus] = useState("");
+  const [editSize, setEditSize] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const b = bonsais.find((b) => b.id === id);
     if (b) {
       setBonsai(b);
+      setEditName(bonsai.name);
+      setEditImage(bonsai.image);
+      setEditFamily(bonsai.family);
+      setEditGenus(bonsai.genus);
+      setEditSize(bonsai.size);
       setLoading(false);
     }
+    return () => {
+      setLoading(true);
+    };
   }, [id, bonsais]);
 
   function handleClick() {
@@ -34,15 +48,16 @@ function BonsaiDetails({
     handleBonsaiDelete(bonsai.id);
   }
 
+  const editedBonsai = {
+    name: editName,
+    image: editImage,
+    family: editFamily,
+    genus: editGenus,
+    size: editSize,
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
-    const editedBonsai = {
-      name: editNameRef.current.value,
-      image: editImageRef.current.value,
-      family: editFamilyRef.current.value,
-      genus: editGenusRef.current.value,
-      size: editSizeRef.current.value,
-    };
     fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
       method: "PATCH",
       headers: {
@@ -77,33 +92,33 @@ function BonsaiDetails({
               required
               type="text"
               name="name"
-              defaultValue={bonsai.name} // Use defaultValue instead of ref
-              ref={editNameRef}
+              value={editName}
+              onChange={(e) => setEditName(e.target.value)}
             />
             <input
               required
               type="text"
               name="image"
-              defaultValue={bonsai.image} // Use defaultValue instead of ref
-              ref={editImageRef}
+              value={editImage}
+              onChange={(e) => setEditImage(e.target.value)}
             />
             <input
               type="text"
               name="family"
-              defaultValue={bonsai.family} // Use defaultValue instead of ref
-              ref={editFamilyRef}
+              value={editFamily}
+              onChange={(e) => setEditFamily(e.target.value)}
             />
             <input
               type="text"
               name="genus"
-              defaultValue={bonsai.genus} // Use defaultValue instead of ref
-              ref={editGenusRef}
+              value={editGenus}
+              onChange={(e) => setEditGenus(e.target.value)}
             />
             <input
               type="text"
               name="size"
-              defaultValue={bonsai.size} // Use defaultValue instead of ref
-              ref={editSizeRef}
+              value={editSize}
+              onChange={(e) => setEditSize(e.target.value)}
             />
             <button className="edit-submit" type="submit">
               Save
