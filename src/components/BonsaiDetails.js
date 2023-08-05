@@ -33,9 +33,9 @@ function BonsaiDetails({
       setEditFamily(bonsai.family);
       setEditGenus(bonsai.genus);
       setEditSize(bonsai.size);
-      setLoading(false)
+      setLoading(false);
     }
-  }, [id, bonsais, isEditing]);
+  }, []);
 
   function handleClick() {
     fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
@@ -68,7 +68,7 @@ function BonsaiDetails({
   }
 
   if (loading) {
-    return <h2>Loading...</h2>
+    return <h2>Loading...</h2>;
   }
 
   return (
@@ -83,7 +83,7 @@ function BonsaiDetails({
               Cancel Edit <i className="fa-solid fa-circle-xmark"></i>
             </h5>
           </button>
-          <img src={bonsai.image} alt="bonsai"/>
+          <img src={bonsai.image} alt="bonsai" />
           <form onSubmit={handleSubmit}>
             <input
               required
@@ -130,7 +130,7 @@ function BonsaiDetails({
             </h5>
           </Link>
           <div className="details-image">
-            <img src={bonsai?.image} alt="bonsai"/>
+            <img src={bonsai?.image} alt="bonsai" />
             <div className="button-wrapper">
               <button
                 className="edit-button"
@@ -156,4 +156,3 @@ function BonsaiDetails({
 }
 
 export default BonsaiDetails;
-
