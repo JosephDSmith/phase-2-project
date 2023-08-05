@@ -14,17 +14,14 @@ function App() {
   const [bonsais, setBonsais] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
 
-
   useEffect(() => {
-    fetch("http://localhost:3000/bonsais")
+    fetch("https://phase-2-project-db-qexg.onrender.com/bonsais")
       .then((r) => r.json())
       .then((data) => setBonsais(data));
   }, []);
 
   function addNewBonsai(newBonsai) {
-  
     setBonsais([...bonsais, newBonsai]);
-    
   }
 
   function handleBonsaiDelete(id) {
@@ -74,7 +71,7 @@ function App() {
         </Route>
         <Route path="/about" element={<About />}>
           <Route path="/about/contactme" element={<ContactMe />} />
-          <Route path="/about/FAQs" element={<FAQs/>} />
+          <Route path="/about/FAQs" element={<FAQs />} />
         </Route>
         <Route
           path="/addbonsai"
