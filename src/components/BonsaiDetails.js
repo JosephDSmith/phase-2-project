@@ -9,13 +9,7 @@ function BonsaiDetails({
   handleUpdateBonsai,
 }) {
   const { id } = useParams();
-  const [bonsai, setBonsai] = useState({
-    name: "",
-    image: "",
-    family: "",
-    genus: "",
-    size: "",
-  });
+  const [bonsai, setBonsai] = useState(null); // Use null instead of an empty object
 
   const editNameRef = useRef("");
   const editImageRef = useRef("");
@@ -28,11 +22,6 @@ function BonsaiDetails({
     const b = bonsais.find((b) => b.id === id);
     if (b) {
       setBonsai(b);
-      editNameRef.current = b.name;
-      editImageRef.current = b.image;
-      editFamilyRef.current = b.family;
-      editGenusRef.current = b.genus;
-      editSizeRef.current = b.size;
       setLoading(false);
     }
   }, [id, bonsais]);
@@ -88,32 +77,32 @@ function BonsaiDetails({
               required
               type="text"
               name="name"
-              defaultValue={editNameRef.current.value}
+              defaultValue={bonsai.name} // Use defaultValue instead of ref
               ref={editNameRef}
             />
             <input
               required
               type="text"
               name="image"
-              defaultValue={editImageRef.current.value}
+              defaultValue={bonsai.image} // Use defaultValue instead of ref
               ref={editImageRef}
             />
             <input
               type="text"
               name="family"
-              defaultValue={editFamilyRef.current.value}
+              defaultValue={bonsai.family} // Use defaultValue instead of ref
               ref={editFamilyRef}
             />
             <input
               type="text"
               name="genus"
-              defaultValue={editGenusRef.current.value}
+              defaultValue={bonsai.genus} // Use defaultValue instead of ref
               ref={editGenusRef}
             />
             <input
               type="text"
               name="size"
-              defaultValue={editSizeRef.current.value}
+              defaultValue={bonsai.size} // Use defaultValue instead of ref
               ref={editSizeRef}
             />
             <button className="edit-submit" type="submit">
