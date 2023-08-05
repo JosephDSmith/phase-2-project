@@ -16,7 +16,10 @@ function Home() {
           </p>
         </div>
         <div className="hero-img">
-          <img src="https://img.freepik.com/premium-photo/five-needle-pine-bonsai-with-white-background_631068-1305.jpg" />
+          <img
+            src="https://img.freepik.com/premium-photo/five-needle-pine-bonsai-with-white-background_631068-1305.jpg"
+            alt="img"
+          />
         </div>
       </div>
       <h2>Bonsai Tree Care for Beginners</h2>
@@ -145,7 +148,6 @@ function Home() {
         Bonsai trees should be repotted once every two to five years, depending
         on how quickly your bonsai tree grows.
       </p>
-
     </div>
   );
 }

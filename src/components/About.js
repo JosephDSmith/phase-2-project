@@ -20,7 +20,7 @@ function About() {
         <div className="about-bonsai-image">
           <img
             src="https://img.freepik.com/premium-photo/bonsai-tree-isolated-white-background-with-clipping-path_313215-5931.jpg?w=1480"
-            alt="bonsai image"
+            alt="bonsai"
           />
         </div>
       </div>

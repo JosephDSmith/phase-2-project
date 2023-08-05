@@ -25,7 +25,7 @@ function BonsaiDetails({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const b = bonsais.find((b) => b.id == id);
+    const b = bonsais.find((b) => b.id === id);
     if (b) {
       setBonsai(b);
       setEditName(bonsai.name);
@@ -83,7 +83,7 @@ function BonsaiDetails({
               Cancel Edit <i className="fa-solid fa-circle-xmark"></i>
             </h5>
           </button>
-          <img src={bonsai.image} />
+          <img src={bonsai.image} atl="bonsai"/>
           <form onSubmit={handleSubmit}>
             <input
               required
@@ -130,7 +130,7 @@ function BonsaiDetails({
             </h5>
           </Link>
           <div className="details-image">
-            <img src={bonsai?.image} />
+            <img src={bonsai?.image} alt="bonsai"/>
             <div className="button-wrapper">
               <button
                 className="edit-button"
