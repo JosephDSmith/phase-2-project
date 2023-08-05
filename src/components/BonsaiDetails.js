@@ -123,7 +123,31 @@ function BonsaiDetails({
         </div>
       ) : (
         <div className="bonsaiCard">
-          {/* Rest of the component content */}
+          <Link to="/bonsaicollection/">
+            <h5>
+              Collapse Details <i className="fa-solid fa-circle-xmark"></i>
+            </h5>
+          </Link>
+          <div className="details-image">
+            <img src={bonsai?.image} alt="bonsai" />
+            <div className="button-wrapper">
+              <button
+                className="edit-button"
+                onClick={() => setIsEditing((prevState) => !prevState)}
+              >
+                Edit
+              </button>
+              <button className="delete-button" onClick={handleClick}>
+                <Link to="/bonsaicollection/">Delete</Link>
+              </button>
+            </div>
+          </div>
+          <div className="about-info">
+            <h3>{bonsai?.name}</h3>
+            <p>Family : {bonsai?.family}</p>
+            <p>Genus-Species : {bonsai?.genus}</p>
+            <p>Mature Size : {bonsai?.size}</p>
+          </div>
         </div>
       )}
     </div>
