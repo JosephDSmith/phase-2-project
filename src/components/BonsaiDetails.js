@@ -38,7 +38,15 @@ function BonsaiDetails({
     return () => {
       setLoading(true);
     };
-  }, [id, bonsais]);
+  }, [
+    id,
+    bonsais,
+    bonsai.family,
+    bonsai.genus,
+    bonsai.image,
+    bonsai.name,
+    bonsai.size,
+  ]);
 
   function handleClick() {
     fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
