@@ -35,7 +35,7 @@ function BonsaiDetails({
       setEditSize(bonsai.size);
       setLoading(false)
     }
-  }, [id, bonsais, isEditing, bonsai.family, bonsai.genus, bonsai.image, bonsai.name, bonsai.size]);
+  }, [id, bonsais, isEditing]);
 
   function handleClick() {
     fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
