@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 function BonsaiCollection({ bonsais, setIsEditing, isEditing }) {
-console.log(bonsais)
+  console.log(bonsais);
   return (
     <div className="bonsai-container">
       <h2>My Bonsai Collection</h2>
@@ -10,9 +10,8 @@ console.log(bonsais)
         {bonsais.map((bonsai) => (
           <li key={bonsai.id}>
             <Link
-              to={`https://my-bonsai-garden.netlify.app//bonsaicollection/${bonsai.id}`}
+              to={`/bonsaicollection/${bonsai.id}`}
               onClick={() => setIsEditing(false)}
-              
             >
               <div className="bonsai-icon">
                 <img src={bonsai.image} alt={bonsai.name} />
