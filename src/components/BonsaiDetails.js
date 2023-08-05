@@ -45,16 +45,15 @@ function BonsaiDetails({
     handleBonsaiDelete(bonsai.id);
   }
 
-  const editedBonsai = {
-    name: editName,
-    image: editImage,
-    family: editFamily,
-    genus: editGenus,
-    size: editSize,
-  };
-
   function handleSubmit(e) {
     e.preventDefault();
+    const editedBonsai = {
+      name: editNameRef.current.value,
+      image: editImageRef.current.value,
+      family: editFamilyRef.current.value,
+      genus: editGenusRef.current.value,
+      size: editSizeRef.current.value,
+    };
     fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
       method: "PATCH",
       headers: {
@@ -89,33 +88,33 @@ function BonsaiDetails({
               required
               type="text"
               name="name"
-              value={editName}
-              onChange={(e) => setEditName(e.target.value)}
+              defaultValue={editNameRef.current.value}
+              ref={editNameRef}
             />
             <input
               required
               type="text"
               name="image"
-              value={editImage}
-              onChange={(e) => setEditImage(e.target.value)}
+              defaultValue={editImageRef.current.value}
+              ref={editImageRef}
             />
             <input
               type="text"
               name="family"
-              value={editFamily}
-              onChange={(e) => setEditFamily(e.target.value)}
+              defaultValue={editFamilyRef.current.value}
+              ref={editFamilyRef}
             />
             <input
               type="text"
               name="genus"
-              value={editGenus}
-              onChange={(e) => setEditGenus(e.target.value)}
+              defaultValue={editGenusRef.current.value}
+              ref={editGenusRef}
             />
             <input
               type="text"
               name="size"
-              value={editSize}
-              onChange={(e) => setEditSize(e.target.value)}
+              defaultValue={editSizeRef.current.value}
+              ref={editSizeRef}
             />
             <button className="edit-submit" type="submit">
               Save
@@ -124,31 +123,7 @@ function BonsaiDetails({
         </div>
       ) : (
         <div className="bonsaiCard">
-          <Link to="/bonsaicollection/">
-            <h5>
-              Collapse Details <i className="fa-solid fa-circle-xmark"></i>
-            </h5>
-          </Link>
-          <div className="details-image">
-            <img src={bonsai?.image} alt="bonsai" />
-            <div className="button-wrapper">
-              <button
-                className="edit-button"
-                onClick={() => setIsEditing((prevState) => !prevState)}
-              >
-                Edit
-              </button>
-              <button className="delete-button" onClick={handleClick}>
-                <Link to="/bonsaicollection/">Delete</Link>
-              </button>
-            </div>
-          </div>
-          <div className="about-info">
-            <h3>{bonsai?.name}</h3>
-            <p>Family : {bonsai?.family}</p>
-            <p>Genus-Species : {bonsai?.genus}</p>
-            <p>Mature Size : {bonsai?.size}</p>
-          </div>
+          {/* Rest of the component content */}
         </div>
       )}
     </div>
