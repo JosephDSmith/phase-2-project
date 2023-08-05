@@ -50,6 +50,7 @@ function BonsaiDetails({
       bonsai.image,
       bonsai.name,
       bonsai.size,
+      loading,
     ],
     {
       leading: true,
