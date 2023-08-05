@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function BonsaiDetails({
@@ -17,33 +17,25 @@ function BonsaiDetails({
     size: "",
   });
 
-  const [editName, setEditName] = useState("");
-  const [editImage, setEditImage] = useState("");
-  const [editFamily, setEditFamily] = useState("");
-  const [editGenus, setEditGenus] = useState("");
-  const [editSize, setEditSize] = useState("");
+  const editNameRef = useRef("");
+  const editImageRef = useRef("");
+  const editFamilyRef = useRef("");
+  const editGenusRef = useRef("");
+  const editSizeRef = useRef("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const b = bonsais.find((b) => b.id === id);
     if (b) {
       setBonsai(b);
-      setEditName(bonsai.name);
-      setEditImage(bonsai.image);
-      setEditFamily(bonsai.family);
-      setEditGenus(bonsai.genus);
-      setEditSize(bonsai.size);
+      editNameRef.current = b.name;
+      editImageRef.current = b.image;
+      editFamilyRef.current = b.family;
+      editGenusRef.current = b.genus;
+      editSizeRef.current = b.size;
       setLoading(false);
     }
-  }, [
-    id,
-    bonsais,
-    bonsai.family,
-    bonsai.genus,
-    bonsai.image,
-    bonsai.name,
-    bonsai.size,
-  ]);
+  }, [id, bonsais]);
 
   function handleClick() {
     fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {
