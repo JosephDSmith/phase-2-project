@@ -25,31 +25,20 @@ function BonsaiDetails({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const b = bonsais.find((b) => b.id === id);
-    if (b) {
-      setBonsai(b);
-      setEditName(bonsai.name);
-      setEditImage(bonsai.image);
-      setEditFamily(bonsai.family);
-      setEditGenus(bonsai.genus);
-      setEditSize(bonsai.size);
-      setLoading(false);
-    }
-    return () => {
-      if (loading) {
-        setLoading(true);
-      }
-    };
-  }, [
-    id,
-    bonsais,
-    bonsai.family,
-    bonsai.genus,
-    bonsai.image,
-    bonsai.name,
-    bonsai.size,
-    loading,
-  ]);
+    // Make an API request to fetch the individual bonsai data based on the ID
+    fetch(`https://phase-2-project-db-qexg.onrender.com/bonsais/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setBonsai(data);
+        setEditName(data.name);
+        setEditImage(data.image);
+        setEditFamily(data.family);
+        setEditGenus(data.genus);
+        setEditSize(data.size);
+        setLoading(false);
+      })
+  }, [id]);
+  
 
   function handleClick() {
     fetch(`https://phase-2-project-db-qexg.onrender.com/${bonsai.id}`, {

@@ -55,20 +55,7 @@ function App() {
               setIsEditing={setIsEditing}
             />
           }
-        >
-          <Route
-            path={"/bonsaicollection/:id"}
-            element={
-              <BonsaiDetails
-                bonsais={bonsais}
-                handleBonsaiDelete={handleBonsaiDelete}
-                isEditing={isEditing}
-                setIsEditing={setIsEditing}
-                handleUpdateBonsai={handleUpdateBonsai}
-              />
-            }
-          />
-        </Route>
+        ></Route>
         <Route path="/about" element={<About />}>
           <Route path="/about/contactme" element={<ContactMe />} />
           <Route path="/about/FAQs" element={<FAQs />} />
@@ -76,6 +63,18 @@ function App() {
         <Route
           path="/addbonsai"
           element={<BonsaiForm addNewBonsai={addNewBonsai} />}
+        />
+        <Route
+          path={"/bonsaicollection/:id"}
+          element={
+            <BonsaiDetails
+              bonsais={bonsais}
+              handleBonsaiDelete={handleBonsaiDelete}
+              isEditing={isEditing}
+              setIsEditing={setIsEditing}
+              handleUpdateBonsai={handleUpdateBonsai}
+            />
+          }
         />
       </Routes>
     </div>

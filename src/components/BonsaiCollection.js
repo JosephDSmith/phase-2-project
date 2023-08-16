@@ -1,8 +1,9 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function BonsaiCollection({ bonsais, setIsEditing, isEditing }) {
-  console.log(bonsais);
+  const navigate = useNavigate();
+
   return (
     <div className="bonsai-container">
       <h2>My Bonsai Collection</h2>
@@ -11,7 +12,10 @@ function BonsaiCollection({ bonsais, setIsEditing, isEditing }) {
           <li key={bonsai.id}>
             <Link
               to={`/bonsaicollection/${bonsai.id}`}
-              onClick={() => setIsEditing(false)}
+              onClick={() => {
+                setIsEditing(false);
+                navigate(`/bonsaicollection/${bonsai.id}`);
+              }}
             >
               <div className="bonsai-icon">
                 <img src={bonsai.image} alt={bonsai.name} />
@@ -21,7 +25,6 @@ function BonsaiCollection({ bonsais, setIsEditing, isEditing }) {
           </li>
         ))}
       </ul>
-      <Outlet />
     </div>
   );
 }
