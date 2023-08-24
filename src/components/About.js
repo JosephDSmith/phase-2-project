@@ -2,7 +2,12 @@ import { Link, Outlet } from "react-router-dom";
 import josephImg from "../images/joseph-image.png";
 
 function About() {
-
+  const scrollToBottom = () => {
+    const bottomElement = document.getElementById("bottom");
+    if (bottomElement) {
+      bottomElement.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  };
 
   return (
     <div className="about">
@@ -30,15 +35,23 @@ function About() {
         </div>
         <div className="about-me-text">
           <h2>About me</h2>
-          <p>I'm an aspiring bonsai cultivator with a passion for all things green!</p>
+          <p>
+            I'm an aspiring bonsai cultivator with a passion for all things
+            green!
+          </p>
           <p>You can view my bonsai collection - and add your own bonsai!</p>
         </div>
       </div>
       <div className="about-links">
-        <Link to="/about/contactme">Click Here to Contact Me!</Link>
-        <Link to="/about/FAQs">FAQs</Link>
+        <Link to="/about/contactme" onClick={scrollToBottom}>
+          Click Here to Contact Me!
+        </Link>
+        <Link to="/about/FAQs" onClick={scrollToBottom}>
+          FAQs
+        </Link>
       </div>
-      <Outlet/>
+      <Outlet />
+      <div id="bottom" style={{ paddingBottom: "30vh" }} />
     </div>
   );
 }

@@ -411,4 +411,117 @@ ul.bonsai-list {
     width: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+    .hero-section img {
+        max-width: 300px;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+    .home-container img {
+        max-width: 450px;
+    }
+    .home-container {
+        padding: 2rem;
+    }
+}
 
+@media only screen and (max-width: 425px) {
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+        margin: 1.5rem;
+    }
+    .hero-section img {
+        max-width: 300px;
+    }
+    .home-container img {
+        max-width: 350px;
+    }
+    ul.bonsai-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .bonsai-container .bonsai-icon, .bonsai-container .bonsai-icon img, .about .me-about img, .about .bonsai-about img {
+        width: 200px;
+        height: 200px;
+    }
+    .bonsai-container li h5 {
+        font-size: 1rem;
+    }
+    .bonsai-container li {
+        margin-bottom: 1.5rem;
+    
+    }
+    .about .me-about, .about .bonsai-about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .bonsai-form form {
+        width: 100%
+    }
+    .editMenu img, .bonsaiCard img {
+        max-width: 300px;
+    }
+
+}
+
+.burger {
+    display: none; /* Hide the burger icon by default */
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #EDF1D6;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media only screen and (max-width: 768px) {
+    .burger {
+        display: block; /* Display the burger icon */
+    }
+
+    /* Show the navigation menu when the burger icon is clicked */
+    .navigation.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background-color: #609966;
+        padding: 1rem;
+        transition: transform 0.4s ease-in-out;
+        transform: translateY(-100%);
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    
+    /* Move the menu into view by resetting the transform */
+    .navigation.show.show {
+        transform: translateY(0);
+    }
+    
+    /* Hide the menu when it's not shown */
+    .navigation:not(.show) {
+        display: none;
+    }
+
+    /* Hide the regular navigation links for mobile */
+    .navigation:not(.show) {
+        display: none;
+    }
+}
