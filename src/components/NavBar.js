@@ -9,7 +9,7 @@ function NavBar() {
   return (
     <div className="navWrapper">
       <div
-        className="burger"
+        className={`burger ${isMenuOpen ? "open" : ""}`}
         id="burger"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >

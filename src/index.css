@@ -489,6 +489,19 @@ ul.bonsai-list {
     transition: 0.4s;
 }
 
+/* Rotate the bars and change position when menu is open */
+.burger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.burger.open .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+.burger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
 @media only screen and (max-width: 768px) {
     .burger {
         display: block; /* Display the burger icon */
