@@ -516,11 +516,12 @@ ul.bonsai-list {
         right: 0;
         width: 100%;
         background-color: #609966;
-        padding: 1rem;
+        padding: 2rem;
         transition: transform 0.4s ease-in-out;
         transform: translateY(-100%);
         flex-wrap: wrap;
         align-content: flex-start;
+        align-items: flex-start;
     }
     
     /* Move the menu into view by resetting the transform */
@@ -533,8 +534,12 @@ ul.bonsai-list {
         display: none;
     }
 
-    /* Hide the regular navigation links for mobile */
-    .navigation:not(.show) {
-        display: none;
-    }
+        /* Additional adjustments for better mobile menu experience */
+        .navigation a {
+            margin: 10px 0; /* Add vertical spacing between links */
+            padding: 1rem; /* Increase padding for larger clickable area */
+            text-align: center; /* Center-align the text */
+            font-size: 1.2rem; /* Increase font size for better readability */
+        }
+
 }
